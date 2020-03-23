@@ -39,15 +39,15 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
 - [ ] Mention two parts of Express that you learned about this week.
-
+    Nodemon and Helmet.
 - [ ] Describe Middleware?
-
+    Middleware is a function that sits between operating systems or applications as a layer. 
 - [ ] Describe a Resource?
-
+    CORS (cross origin resource sharing)
 - [ ] What can the API return to help clients know if a request was successful?
-
+    If a request is successful the API can return a 200 code to the client. 
 - [ ] How can we partition our application into sub-applications?
-
+    Partion our application by seperating files into sub files to keep code clean.
 ## Minimum Viable Product
 
 - [ ] Configure an _npm script_ named _"server"_ that will execute your code using _nodemon_. Make _nodemon_ be a development time dependency only, it shouldn't be deployed to production.
