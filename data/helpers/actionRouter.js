@@ -31,7 +31,7 @@ router.post("/", (req, res) => {
 //GET /api/ Returns an array of all the objects contained in the database.
 router.get("/", (req, res) => {
   actRouter
-    .get(req.query)
+    .get(req.query.id)
     .then(data => {
       res.status(200).json(data);
     })

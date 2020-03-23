@@ -1,11 +1,11 @@
 const express = require("express");
-const projRouter = require("./actionModel");
+const projRouter = require("./projectModel");
 const router = express.Router();
 
 
 
 router.post("/", (req, res) => {
-  const { name, description } = req.body;
+  const { name, description, completed } = req.body;
   !name || !description
     ? res
         .status(400)
@@ -14,7 +14,7 @@ router.post("/", (req, res) => {
           errorMessage: "Please provide name and description for the project."
         })
     : console.log("name", name);
-  projRouter.insert({ name, description})
+  projRouter.insert({ name, description, completed})
     .then(data => {
       res.status(201).json(data);
     })
@@ -31,7 +31,7 @@ router.post("/", (req, res) => {
 
 //GET /api/ Returns an array of all the post objects contained in the database.
 router.get("/", (req, res) => {
-  projRouter.get(req.query)
+  projRouter.get(req.query.id)
     .then(data => {
       res.status(200).json(data);
     })
@@ -102,8 +102,7 @@ router.delete("/:id", (req, res) => {
     });
 });
 
-//PUT /api/posts/:id
-
+//PUT /api/project/:id
 router.put("/:id", (req, res) => {
   const { id } = req.params;
 
